@@ -8,9 +8,10 @@ resource "验证码" do
     let(:email) { '1@qq.com' }
     # 请求时带上测试用例
     example "请求发送验证码" do
+      expect(UserMailer).to receive(:welcome_email).with(email)
       do_request
       expect(status).to eq 200
       expect(response_body).to eq ' '
     end
   end
-end 
+end

@@ -1,3 +1,4 @@
+require 'jwt'
 class Api::V1::SessionsController < ApplicationController
   def create
     # 如果测试环境
@@ -10,9 +11,11 @@ class Api::V1::SessionsController < ApplicationController
     user = User.find_by_email params[:email]
     if user.nil?
       render status: :not_found, json: {error: '用户不存在'}
-    else 
+    else
+      payload = { user_id: user.id }
+      token = JWT.encode payload, Rails.application.credentials.hmac_secret, 'HS256'
       render status: :ok, json: {
-        jwt: 'xxxxxxxx'
+        jwt: token
       }
     end
     

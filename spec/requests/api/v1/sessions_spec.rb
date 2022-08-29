@@ -7,8 +7,6 @@ RSpec.describe "Sessions", type: :request do
       post '/api/v1/session', params: {email: '919041098@qq.com', code: '123456'}
       expect(response).to have_http_status(200)
       json = JSON.parse response.body
-      p '-------'
-      p json['jwt']
       expect(json['jwt']).to be_a(String)
     end
   end

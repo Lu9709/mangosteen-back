@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
-resource "验证码" do
+resource "账目" do
   get "/api/v1/items" do
     # 验证方式：使用基础验证， 值为auth
     authentication :basic, :auth

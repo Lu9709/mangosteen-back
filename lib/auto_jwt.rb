@@ -4,7 +4,7 @@ class AutoJwt
   end
   def call(env)
     # jwt 跳过以下路径
-    return @app.call(env) if ['/api/v1/session'].include? env['PATH_INFO']
+    return @app.call(env) if ['/api/v1/session','/api/v1/validation_codes'].include? env['PATH_INFO']
 
     header = env['HTTP_AUTHORIZATION']
     jwt = header.split(' ')[1] rescue ''

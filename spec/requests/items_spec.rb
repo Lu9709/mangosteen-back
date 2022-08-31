@@ -79,4 +79,10 @@ RSpec.describe "Items", type: :request do
       expect(json['resources']['amount']).to eq 99
     end
   end
+  it "首次登录" do 
+    post '/api/v1/session', params: {email: '919041098@qq.com', code: '123456'}
+    expect(response).to have_http_status(200)
+    json = JSON.parse response.body
+    expect(json['jwt']).to be_a(String)
+  end
 end

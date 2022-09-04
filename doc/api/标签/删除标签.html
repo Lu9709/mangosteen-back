@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>验证码 API</title>
+    <title>标签 API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,48 +106,28 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>验证码 API</h1>
+      <h1>标签 API</h1>
 
       <div class="article">
-        <h2>请求发送验证码</h2>
-        <h3>POST /api/v1/validation_codes</h3>
+        <h2>删除标签</h2>
+        <h3>DELETE /api/v1/tags/:id</h3>
 
-          <h3>Parameters</h3>
-          <table class="parameters table table-striped table-bordered table-condensed">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                    <span class="name">email</span>
-                </td>
-                <td>
-                  <span class="description">Email</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
 
 
           <h3>Request</h3>
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzIsImV4cCI6MTY2MjMwMzc3OH0.eN8SX80OgiLD53vn2yjWOSXW97dU0_qkwHySfm6OgSM
 Accept: application/json
 Content-Type: application/json
 Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST /api/v1/validation_codes</pre>
+          <pre class="request route highlight">DELETE /api/v1/tags/653</pre>
 
 
-            <h4>Body</h4>
-            <pre class="request body">{"email":"1@qq.com"}</pre>
 
 
             <h3>Response</h3>
@@ -158,52 +138,13 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Content-Type: text/plain; charset=utf-8
-Vary: Accept
-ETag: W/&quot;36a9e7f1c95b82ffb99743e0c5c4ce95&quot;
-Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 117488c0-18f0-4e5a-ae92-1b648b846de4
-X-Runtime: 0.054244
-Content-Length: 1</pre>
+Content-Type: application/json
+Cache-Control: no-cache
+X-Request-Id: 92e4e085-3db5-43a5-8962-afa9774fbf3b
+X-Runtime: 0.016264
+Content-Length: 0</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
-              <h4>Body</h4>
-              <pre class="response body"> </pre>
-          <h3>Request</h3>
-
-            <h4>Headers</h4>
-            <pre class="request headers">Version: HTTP/1.0
-Accept: application/json
-Content-Type: application/json
-Host: example.org
-Cookie: </pre>
-
-          <h4>Route</h4>
-          <pre class="request route highlight">POST /api/v1/validation_codes</pre>
-
-
-            <h4>Body</h4>
-            <pre class="request body">{"email":"1@qq.com"}</pre>
-
-
-            <h3>Response</h3>
-              <h4>Headers</h4>
-              <pre class="response headers">X-Frame-Options: SAMEORIGIN
-X-XSS-Protection: 0
-X-Content-Type-Options: nosniff
-X-Download-Options: noopen
-X-Permitted-Cross-Domain-Policies: none
-Referrer-Policy: strict-origin-when-cross-origin
-Content-Type: text/plain; charset=utf-8
-Vary: Accept
-Cache-Control: no-cache
-X-Request-Id: 9b96492c-ba7b-402e-bf1a-ca1cab61bda6
-X-Runtime: 0.007915
-Content-Length: 1</pre>
-            <h4>Status</h4>
-            <pre class="response status">429 Too Many Requests</pre>
-              <h4>Body</h4>
-              <pre class="response body"> </pre>
       </div>
     </div>
   </body>

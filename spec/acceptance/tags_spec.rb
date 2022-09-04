@@ -64,4 +64,12 @@ resource "标签" do
       expect(json["resource"]["sign"]).to eq sign
     end
   end
+  delete "/api/v1/tags/:id" do 
+    let (:tag) { Tag.create name: "x", sign: "x", user_id: current_user.id }
+    let (:id) { tag.id }
+    example "删除标签" do
+      do_request
+      expect(status).to eq 200
+    end
+  end
 end

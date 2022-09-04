@@ -8,6 +8,7 @@ RSpec.describe "Api::V1::Tags", type: :request do
     end
     it "登录后获取标签" do
       user = User.create email: '1@qq.com'
+      user = User.create email: '1@qq.com'
       another_user = User.create email: '2@qq.com'
       # 创建 11 个 tag
       11.times do |i| Tag.create name: "tag#{i}", user_id: user.id, sign: 'x' end
@@ -77,6 +78,30 @@ RSpec.describe "Api::V1::Tags", type: :request do
       json = JSON.parse response.body
       expect(json['resource']['name']).to eq 'y'
       expect(json['resource']['sign']).to eq 'x'
+    end
+  end
+  describe "删除标签" do
+    it "未登录删除标签" do
+      user = User.create email: '1@qq.com'
+      tag = Tag.create name: 'x', sign: 'x', user_id: user.id
+      delete "/api/v1/tags/#{tag.id}"
+      expect(response).to have_http_status 401
+    end
+    it "登录后删除标签" do
+      user = User.create email: '1@qq.com'
+      tag = Tag.create name: 'x', sign: 'x', user_id: user.id
+      delete "/api/v1/tags/#{tag.id}", headers: user.generate_auth_header
+      expect(response).to have_http_status 200
+      # tag = Tag.find tag.id
+      tag.reload
+      expect(tag.deleted_at).not_to eq nil
+    end
+    it "登录后删除别人的标签" do
+      user = User.create email: '1@qq.com'
+      other = User.create email: '2@qq.com'
+      tag = Tag.create name: 'x', sign: 'x', user_id: other.id
+      delete "/api/v1/tags/#{tag.id}", headers: user.generate_auth_header
+      expect(response).to have_http_status 403
     end
   end
 end

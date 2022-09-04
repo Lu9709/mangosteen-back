@@ -21,4 +21,15 @@ class Api::V1::TagsController < ApplicationController
       render json: { errors: tag.errors }, status: :unprocessable_entity
     end
   end
+  def update
+    # find 如果找不到是会报错的
+    tag = Tag.find params[:id]
+    # permit即在参数查找name和sign的key和值返回一个哈希值
+    tag.update params.permit(:name, :sign)
+    if tag.errors.empty?
+      render json: { resource: tag }
+    else
+      render json: { errors: tag.errors }, status: :unprocessable_entity
+    end
+  end
 end

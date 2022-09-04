@@ -42,4 +42,9 @@ class Api::V1::TagsController < ApplicationController
       render json: { errors: tag.errors }, status: :unprocessable_entity
     end
   end
+  def show
+    tag = Tag.find params[:id]
+    return head :forbidden unless tag.user_id == request.env['current_user_id']
+    render json: { resource: tag }
+  end
 end

@@ -110,27 +110,8 @@ table th, table td {
 
       <div class="article">
         <h2>获取标签</h2>
-        <h3>GET /api/v1/tags</h3>
+        <h3>GET /api/v1/tags/:id</h3>
 
-          <h3>Parameters</h3>
-          <table class="parameters table table-striped table-bordered table-condensed">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                    <span class="name">page</span>
-                </td>
-                <td>
-                  <span class="description">页码</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
 
           <h3>Response Fields</h3>
           <table class="response-fields table table-striped table-bordered table-condensed">
@@ -188,14 +169,14 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMjksImV4cCI6MTY2MjMwMzc3OH0.1mPcTeiSqXx-5P87uhJwe1L2cX91bD9970hCCzqaKgE
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyODAsImV4cCI6MTY2MjMwNTc0MH0.rHzr0y1-x9TU6SGuvQ-nvDsDFT9aNaJVMj31C0y71zM
 Accept: application/json
 Content-Type: application/json
 Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /api/v1/tags</pre>
+          <pre class="request route highlight">GET /api/v1/tags/707</pre>
 
 
 
@@ -210,111 +191,23 @@ X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
 Vary: Accept
-ETag: W/&quot;72a0ede09b6a136c5dbe7943d602fc60&quot;
+ETag: W/&quot;22a7bf0f9464bc02e192105111280d6e&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 6a356ca7-f491-4f98-9a38-497b50670502
-X-Runtime: 0.059602
-Content-Length: 1509</pre>
+X-Request-Id: f71ae64b-3701-43fe-85a7-3aec26dc6767
+X-Runtime: 0.017373
+Content-Length: 157</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;resources&quot;: [
-    {
-      &quot;id&quot;: 640,
-      &quot;user_id&quot;: 229,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2022-09-04T13:02:57.974Z&quot;,
-      &quot;updated_at&quot;: &quot;2022-09-04T13:02:57.974Z&quot;
-    },
-    {
-      &quot;id&quot;: 641,
-      &quot;user_id&quot;: 229,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2022-09-04T13:02:57.981Z&quot;,
-      &quot;updated_at&quot;: &quot;2022-09-04T13:02:57.981Z&quot;
-    },
-    {
-      &quot;id&quot;: 642,
-      &quot;user_id&quot;: 229,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2022-09-04T13:02:57.988Z&quot;,
-      &quot;updated_at&quot;: &quot;2022-09-04T13:02:57.988Z&quot;
-    },
-    {
-      &quot;id&quot;: 643,
-      &quot;user_id&quot;: 229,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2022-09-04T13:02:57.994Z&quot;,
-      &quot;updated_at&quot;: &quot;2022-09-04T13:02:57.994Z&quot;
-    },
-    {
-      &quot;id&quot;: 644,
-      &quot;user_id&quot;: 229,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2022-09-04T13:02:58.000Z&quot;,
-      &quot;updated_at&quot;: &quot;2022-09-04T13:02:58.000Z&quot;
-    },
-    {
-      &quot;id&quot;: 645,
-      &quot;user_id&quot;: 229,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2022-09-04T13:02:58.006Z&quot;,
-      &quot;updated_at&quot;: &quot;2022-09-04T13:02:58.006Z&quot;
-    },
-    {
-      &quot;id&quot;: 646,
-      &quot;user_id&quot;: 229,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2022-09-04T13:02:58.012Z&quot;,
-      &quot;updated_at&quot;: &quot;2022-09-04T13:02:58.012Z&quot;
-    },
-    {
-      &quot;id&quot;: 647,
-      &quot;user_id&quot;: 229,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2022-09-04T13:02:58.018Z&quot;,
-      &quot;updated_at&quot;: &quot;2022-09-04T13:02:58.018Z&quot;
-    },
-    {
-      &quot;id&quot;: 648,
-      &quot;user_id&quot;: 229,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2022-09-04T13:02:58.023Z&quot;,
-      &quot;updated_at&quot;: &quot;2022-09-04T13:02:58.023Z&quot;
-    },
-    {
-      &quot;id&quot;: 649,
-      &quot;user_id&quot;: 229,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2022-09-04T13:02:58.029Z&quot;,
-      &quot;updated_at&quot;: &quot;2022-09-04T13:02:58.029Z&quot;
-    }
-  ],
-  &quot;pager&quot;: {
-    &quot;page&quot;: 1,
-    &quot;per_page&quot;: 10,
-    &quot;count&quot;: 11
+  &quot;resource&quot;: {
+    &quot;id&quot;: 707,
+    &quot;user_id&quot;: 280,
+    &quot;name&quot;: &quot;x&quot;,
+    &quot;sign&quot;: &quot;x&quot;,
+    &quot;deleted_at&quot;: null,
+    &quot;created_at&quot;: &quot;2022-09-04T13:35:40.924Z&quot;,
+    &quot;updated_at&quot;: &quot;2022-09-04T13:35:40.924Z&quot;
   }
 }</pre>
       </div>

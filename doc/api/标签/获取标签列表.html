@@ -109,8 +109,8 @@ table th, table td {
       <h1>标签 API</h1>
 
       <div class="article">
-        <h2>创建标签</h2>
-        <h3>POST /api/v1/tags</h3>
+        <h2>获取标签列表</h2>
+        <h3>GET /api/v1/tags</h3>
 
           <h3>Parameters</h3>
           <table class="parameters table table-striped table-bordered table-condensed">
@@ -122,19 +122,11 @@ table th, table td {
             </thead>
             <tbody>
               <tr>
-                <td class="required">
-                    <span class="name">name</span>
+                <td>
+                    <span class="name">page</span>
                 </td>
                 <td>
-                  <span class="description">名称</span>
-                </td>
-              </tr>
-              <tr>
-                <td class="required">
-                    <span class="name">sign</span>
-                </td>
-                <td>
-                  <span class="description">符号</span>
+                  <span class="description">页码</span>
                 </td>
               </tr>
             </tbody>
@@ -196,18 +188,16 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyODIsImV4cCI6MTY2MjMwNTc0MX0.3ANsYp_h2PZvmo-ryKCKipqGI6e84SmjZs1ehWBvau0
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyODEsImV4cCI6MTY2MjMwNTc0MX0.zeF-kaO96hTVk3pBLcTbTFY8gXzHQ9MIOKSJ27DhcHM
 Accept: application/json
 Content-Type: application/json
 Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST /api/v1/tags</pre>
+          <pre class="request route highlight">GET /api/v1/tags</pre>
 
 
-            <h4>Body</h4>
-            <pre class="request body">{"name":"name","sign":"sign"}</pre>
 
 
             <h3>Response</h3>
@@ -220,23 +210,111 @@ X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
 Vary: Accept
-ETag: W/&quot;e68520a3301329612ea8557d18bcec82&quot;
+ETag: W/&quot;e352e0da1d2736296c079078679e64b3&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: d82b7c90-4bd8-4517-bf76-27fd992dc032
-X-Runtime: 0.023306
-Content-Length: 163</pre>
+X-Request-Id: 184b3248-5892-4dd5-b5b9-53eadd797709
+X-Runtime: 0.024743
+Content-Length: 1509</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;resource&quot;: {
-    &quot;id&quot;: 719,
-    &quot;user_id&quot;: 282,
-    &quot;name&quot;: &quot;name&quot;,
-    &quot;sign&quot;: &quot;sign&quot;,
-    &quot;deleted_at&quot;: null,
-    &quot;created_at&quot;: &quot;2022-09-04T13:35:41.180Z&quot;,
-    &quot;updated_at&quot;: &quot;2022-09-04T13:35:41.180Z&quot;
+  &quot;resources&quot;: [
+    {
+      &quot;id&quot;: 708,
+      &quot;user_id&quot;: 281,
+      &quot;name&quot;: &quot;x&quot;,
+      &quot;sign&quot;: &quot;x&quot;,
+      &quot;deleted_at&quot;: null,
+      &quot;created_at&quot;: &quot;2022-09-04T13:35:40.967Z&quot;,
+      &quot;updated_at&quot;: &quot;2022-09-04T13:35:40.967Z&quot;
+    },
+    {
+      &quot;id&quot;: 709,
+      &quot;user_id&quot;: 281,
+      &quot;name&quot;: &quot;x&quot;,
+      &quot;sign&quot;: &quot;x&quot;,
+      &quot;deleted_at&quot;: null,
+      &quot;created_at&quot;: &quot;2022-09-04T13:35:40.975Z&quot;,
+      &quot;updated_at&quot;: &quot;2022-09-04T13:35:40.975Z&quot;
+    },
+    {
+      &quot;id&quot;: 710,
+      &quot;user_id&quot;: 281,
+      &quot;name&quot;: &quot;x&quot;,
+      &quot;sign&quot;: &quot;x&quot;,
+      &quot;deleted_at&quot;: null,
+      &quot;created_at&quot;: &quot;2022-09-04T13:35:40.983Z&quot;,
+      &quot;updated_at&quot;: &quot;2022-09-04T13:35:40.983Z&quot;
+    },
+    {
+      &quot;id&quot;: 711,
+      &quot;user_id&quot;: 281,
+      &quot;name&quot;: &quot;x&quot;,
+      &quot;sign&quot;: &quot;x&quot;,
+      &quot;deleted_at&quot;: null,
+      &quot;created_at&quot;: &quot;2022-09-04T13:35:40.992Z&quot;,
+      &quot;updated_at&quot;: &quot;2022-09-04T13:35:40.992Z&quot;
+    },
+    {
+      &quot;id&quot;: 712,
+      &quot;user_id&quot;: 281,
+      &quot;name&quot;: &quot;x&quot;,
+      &quot;sign&quot;: &quot;x&quot;,
+      &quot;deleted_at&quot;: null,
+      &quot;created_at&quot;: &quot;2022-09-04T13:35:41.008Z&quot;,
+      &quot;updated_at&quot;: &quot;2022-09-04T13:35:41.008Z&quot;
+    },
+    {
+      &quot;id&quot;: 713,
+      &quot;user_id&quot;: 281,
+      &quot;name&quot;: &quot;x&quot;,
+      &quot;sign&quot;: &quot;x&quot;,
+      &quot;deleted_at&quot;: null,
+      &quot;created_at&quot;: &quot;2022-09-04T13:35:41.067Z&quot;,
+      &quot;updated_at&quot;: &quot;2022-09-04T13:35:41.067Z&quot;
+    },
+    {
+      &quot;id&quot;: 714,
+      &quot;user_id&quot;: 281,
+      &quot;name&quot;: &quot;x&quot;,
+      &quot;sign&quot;: &quot;x&quot;,
+      &quot;deleted_at&quot;: null,
+      &quot;created_at&quot;: &quot;2022-09-04T13:35:41.077Z&quot;,
+      &quot;updated_at&quot;: &quot;2022-09-04T13:35:41.077Z&quot;
+    },
+    {
+      &quot;id&quot;: 715,
+      &quot;user_id&quot;: 281,
+      &quot;name&quot;: &quot;x&quot;,
+      &quot;sign&quot;: &quot;x&quot;,
+      &quot;deleted_at&quot;: null,
+      &quot;created_at&quot;: &quot;2022-09-04T13:35:41.085Z&quot;,
+      &quot;updated_at&quot;: &quot;2022-09-04T13:35:41.085Z&quot;
+    },
+    {
+      &quot;id&quot;: 716,
+      &quot;user_id&quot;: 281,
+      &quot;name&quot;: &quot;x&quot;,
+      &quot;sign&quot;: &quot;x&quot;,
+      &quot;deleted_at&quot;: null,
+      &quot;created_at&quot;: &quot;2022-09-04T13:35:41.092Z&quot;,
+      &quot;updated_at&quot;: &quot;2022-09-04T13:35:41.092Z&quot;
+    },
+    {
+      &quot;id&quot;: 717,
+      &quot;user_id&quot;: 281,
+      &quot;name&quot;: &quot;x&quot;,
+      &quot;sign&quot;: &quot;x&quot;,
+      &quot;deleted_at&quot;: null,
+      &quot;created_at&quot;: &quot;2022-09-04T13:35:41.101Z&quot;,
+      &quot;updated_at&quot;: &quot;2022-09-04T13:35:41.101Z&quot;
+    }
+  ],
+  &quot;pager&quot;: {
+    &quot;page&quot;: 1,
+    &quot;per_page&quot;: 10,
+    &quot;count&quot;: 11
   }
 }</pre>
       </div>

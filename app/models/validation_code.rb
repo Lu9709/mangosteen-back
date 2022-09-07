@@ -3,7 +3,7 @@ class ValidationCode < ApplicationRecord
 
   # email 必须是合法的邮箱地址
   validates :email, format: { with: /\A.+@.+\z/ }
-  after_initialize :generate_code
+  before_create :generate_code
   after_create :send_email
 
   enum kind: { sign_in: 0, reset_password: 1 }
